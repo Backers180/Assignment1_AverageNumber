@@ -1,19 +1,15 @@
-entries = 0     # These are the varibales for the program
-total = 0     
+entries = 0
 numbers = []
-gate = 0
+total = 0
 
-print("How many numbers would you like to find the average of?")
-entries = int(input())                                            
-
-print("please enter your numbers, one at a time:")
-
-while gate < entries:
-  numbers.append(int(input()))
-  gate += 1
-
-for entry in numbers:
-  total += entry
-
-print("The average of your numbers is:", total / entries)
-
+print("Please enter the numbers you want the average of: ")
+print("(When you finish entering your numbers, input 'End')")
+while True:
+  value = input()
+  if value == "End":
+      for entry in numbers:
+        total += entry
+      print("The average of your numbers is:", total / entries)
+  else:
+    entries += 1
+    numbers.append(int(value))
